@@ -13,22 +13,22 @@
     <p class="mv3 lh-copy">
       Generate
       <input type="text"
-        class="input-reset w3 mh1 pa2 fira-mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
+        class="input-reset w3 mh1 pa2 mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
         v-model="tx.num" />
       numbers between
       <input type="text"
-        class="input-reset w3 mh1 pa2 fira-mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
+        class="input-reset w3 mh1 pa2 mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
         v-model="tx.min" />
       and
       <input type="text"
-        class="input-reset w3 mh1 pa2 fira-mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
+        class="input-reset w3 mh1 pa2 mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
         v-model="tx.max" />.
     </p>
 
     <p class="mv3 lh-copy">
       My name is
       <input type="text"
-        class="input-reset w5 mh1 pa2 fira-mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
+        class="input-reset w5 mh1 pa2 mono f5 lh-copy gray hover-dark-gray bg-white ba bw1 b--transparent outline-0 tc"
         v-model="tx.name" />.
     </p>
 
@@ -36,8 +36,9 @@
       <pre class="language-bash" style="margin:0;"><code v-html="opReturnPreview" /><code class="db" style="margin-top: 1rem; font-size: 0.75rem;" v-html="script" /></pre> 
     </div>
 
-    <div v-if="isValid">
-      <MoneyButton
+    <div v-if="isValid && moneyButtonComponent">
+      <component
+        :is="moneyButtonComponent"
         label="Pick lotto"
         success-message="Feeling lucky!"
         :outputs="outputs"
@@ -58,7 +59,6 @@
 import prism from 'prismjs'
 import 'prismjs/components/prism-bash'
 import AlertIcon from 'vue-material-design-icons/Alert'
-import MoneyButton from 'vue-money-button'
 
 export default {
   data() {
@@ -69,7 +69,8 @@ export default {
         max: '59',
         name: 'Satoshi Nakamoto'
       },
-      script: 'abc'
+      script: 'abc',
+      moneyButtonComponent: null
     }
   },
 
@@ -107,7 +108,11 @@ export default {
   },
 
   mounted() {
-    this.generateScript()
+    import('vue-money-button')
+      .then(module => {
+        this.moneyButtonComponent = module.default
+        this.generateScript()
+      })
   },
 
   watch: {
@@ -135,14 +140,15 @@ export default {
     },
 
     onPayment(payment) {
-      //console.log(payment)
-      this.$emit('payment', payment.txid)
+      if (payment) {
+        this.$emit('payment', payment.txid)
+      }
     }
   },
 
   components: {
-    AlertIcon,
-    MoneyButton
+    AlertIcon
+    //MoneyButton
   }
 }
 </script>

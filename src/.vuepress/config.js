@@ -2,19 +2,11 @@ const path = require('path')
 
 module.exports = {
   title: 'Operate',
+
   head: [
     ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css' }],
     ['script', { src: 'https://unpkg.com/bsv@1.0.0' }]
   ],
-
-  //additionalPages: [
-  //  {
-  //    path: '/library/op/:ref',
-  //    frontmatter: {
-  //      layout: 'Layout'
-  //    }
-  //  }
-  //],
 
   plugins: [
     ['vuepress-plugin-container', {
@@ -50,6 +42,8 @@ module.exports = {
       { text: 'Articles', link: '/blog' }
     ]
   },
+
+  dest: './dist',
 
   configureWebpack: {
     resolve: {

@@ -16,7 +16,7 @@
         <span class="pa3 f7 silver lh-block">TXID:</span>
       </div>
       <input type="text"
-        class="input-reset w-100 pa3 pl5 fira-mono f5 lh-copy gray hover-dark-gray bg-transparent ba bw1 b--transparent outline-0"
+        class="input-reset w-100 pa3 pl5 mono f5 lh-copy gray hover-dark-gray bg-transparent ba bw1 b--transparent outline-0"
         v-model="txid" />
     </div>
 

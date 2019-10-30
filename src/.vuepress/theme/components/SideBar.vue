@@ -1,6 +1,9 @@
 <template>
   <aside class="pv4 pv5-l br b--light-gray | sidebar">
-    <Affix relative-element-selector="#main"
+    <component
+      :is="affixComponent"
+      v-if="affixComponent"
+      relative-element-selector="#main"
       style="width: 20rem;"
       :offset="{ top: -40, bottom: 40 }">
       
@@ -10,17 +13,34 @@
           {{ $page.title }}
         </router-link>
       </h4>
-
       <SideLinks :items="items" />
-    </Affix>
+
+    </component>
+    <div v-else>
+
+      <h4 class="ma0 f5">
+        <router-link class="relative db ph3 ph4-l pv1 link dark-gray hover-hot-pink side-link"
+          :to="$page.path">
+          {{ $page.title }}
+        </router-link>
+      </h4>
+      <SideLinks :items="items" />
+      
+    </div>
   </aside>
 </template>
 
 <script>
-import { Affix } from 'vue-affix'
+//import { Affix } from 'vue-affix'
 import SideLinks from '@theme/components/SideLinks.vue'
 
 export default {
+  data() {
+    return {
+      affixComponent: null
+    }
+  },
+
   computed: {
     items() {
       return this.$page.headers.reduce((headers, h, i, source) => {
@@ -34,8 +54,13 @@ export default {
     }
   },
 
+  mounted() {
+    import('vue-affix').then(module => {
+      this.affixComponent = module.Affix
+    })
+  },
+
   components: {
-    Affix,
     SideLinks
   }
 }

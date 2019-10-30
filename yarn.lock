@@ -7505,10 +7505,10 @@ vue-material-design-icons@^4.1.0:
   resolved "https://registry.yarnpkg.com/vue-material-design-icons/-/vue-material-design-icons-4.1.0.tgz#4caef9571c9c83a2a73d84c131e137e784689ba1"
   integrity sha512-WP7EA5dY/Gtapw4G9iT7xHTKU4eB75/DKDNC8OkiCziJ32A9SbhOvN52R9wI66I3HLxsABZ/fVYt+J0Wu1fdAw==
 
-vue-money-button@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/vue-money-button/-/vue-money-button-0.2.3.tgz#c99f87a478be716b8f42de4902e85b4e27e72e12"
-  integrity sha512-SIu51MW8ZlYJ9GCQ1Zb4armudEbnpnT/lFsj0GEkWzyGm07Hen2fL1S1XKo42hg/lpkyrGkXZgSJoCVUNvRSYA==
+vue-money-button@^0.3.0:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/vue-money-button/-/vue-money-button-0.3.1.tgz#80b5c7691e24adecdcb9605a52e586326e36835a"
+  integrity sha512-0Tonno2jvVAhoI2dR+aueXwXYe1jfCiFcUX64+pZdKgjB+6bWHolyLUcGSyyuZgF4LPH14v24i/FtIBqiav09g==
 
 vue-router@^3.1.3:
   version "3.1.3"

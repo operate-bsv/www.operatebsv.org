@@ -12,9 +12,9 @@ Operate offers some distinct advantages over native Bitcom.
 
 ### Protocols are functions
 
-In Operate, protocols are functions, called "Ops". Anyone can write an Op and publish it to the blockchain and anyone can read the source of an "Op" to verify what it does. Ops are incredibly powerful and can be used to process data, perform calculations and operations, and return any kind of value.
+In Operate, protocols are functions, called "Ops". Anyone can write an Op and publish it to the blockchain and anyone can read the source of an Op to verify what it does. Ops are incredibly powerful and can be used to process data, perform calculations and operations, and return any kind of value.
 
-Application developers no longer need to read a spec and spend time implementing protocols. Operate is a decentralised repository of pre-built, ready to roll, immutable functions.
+Application developers no longer need to spend time implementing protocol specifications. Operate is a decentralised repository of pre-built, ready to roll, immutable functions.
 
 * [View the Op library](/library)
 
@@ -46,8 +46,8 @@ No new tools are needed to craft a transaction that is a valid Operate program. 
 
 The following example pipes together two Ops:
 
-* [`math/fib` - `0x2E25B1BD`](/library/op/2e25b1bd) - returns a list of Fibonacci numbers from the given list of integers.
-* [`object/put_new` - `0x0CA59130`](/library/op/0ca59130) - puts the given state into a new object at the specified path, and adds any other key/value attributes to the object.
+* [`math/fib` - `0x2E25B1BD`](/library/op/?ref=2e25b1bd) - returns a list of Fibonacci numbers from the given list of integers.
+* [`object/put_new` - `0x0CA59130`](/library/op/?ref=0ca59130) - puts the given state into a new object at the specified path, and adds any other key/value attributes to the object.
 
 ```bash
 OP_FALSE OP_RETURN

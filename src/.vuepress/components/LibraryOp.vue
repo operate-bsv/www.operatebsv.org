@@ -5,7 +5,7 @@
       <span v-if="op">
         {{ op.name }}
         <span class="f3 light-silver">&mdash;</span>
-        <span class="f3 fira-mono green">0x{{ op.ref.toUpperCase() }}</span>
+        <span class="f3 mono green">0x{{ op.ref.toUpperCase() }}</span>
       </span>
       
     </h1>
@@ -17,7 +17,7 @@
     <template v-if="op">
       <div class="flex justify-between">
         <div class="mr3 mr4-l">
-          <table class="w-100 mb3 fira-mono f6 lh-block">
+          <table class="w-100 mb3 mono f6 lh-block">
             <tr>
               <th class="pr1 fw4 tl silver">TXID</th>
               <td class="pl1 mid-gray">
@@ -64,7 +64,7 @@
             <tbody>
               <tr class="bb b--light-gray" v-for="val, key in op.meta">
                 <td class="pa1 w4">0.0.1</td>
-                <td class="pa1 fira-mono">abcdef</td>
+                <td class="pa1 mono">abcdef</td>
               </tr>
             </tbody>
           </table>
@@ -129,11 +129,14 @@ export default {
 
   methods: {
     fetchOp() {
-      const url = 'https://functions.chronoslabs.net/api/functions/' + this.$route.params.ref;
+      const url = 'https://functions.chronoslabs.net/api/functions/' + this.$route.query.ref;
       return axios.get(url, { params: { script: true } })
         .then(r => {
           this.op = r.data.data;
+          this.$page.frontmatter.title = this.op.name
+          window.document.title = this.$title
         })
+        .catch(e => this.$router.push('/library/'))
     }
   },
 
