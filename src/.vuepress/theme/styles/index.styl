@@ -54,11 +54,9 @@ a.header-anchor {
   }
 
   p, ul, ol {
-    &:not(.override) {
-      margin: 1rem 0;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   > div[class*="language-"] {
@@ -79,6 +77,41 @@ a.header-anchor {
       background: none;
       color: inherit;
     }
+  }
+}
+
+.content__standfirst {
+  p {
+    margin: 1rem 0;
+    max-width: 34em;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+.content__features {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    width: 45%;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  p {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    line-height: 1.35;
   }
 }
 

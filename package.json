@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "site:dev": "vuepress dev src",
-    "site:build": "vuepress build src"
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "deploy": "npm run build && deploy.sh"
   },
   "dependencies": {
     "axios": "^0.19.0",

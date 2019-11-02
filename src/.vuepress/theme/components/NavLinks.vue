@@ -19,3 +19,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+li:first-child {
+  margin-left: 0 !important;
+}
+</style>

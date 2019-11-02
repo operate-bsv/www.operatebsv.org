@@ -2,6 +2,7 @@ const path = require('path')
 
 module.exports = {
   title: 'Operate',
+  description: 'An extensible Bitcoin meta programming protocol.',
 
   head: [
     ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css' }],

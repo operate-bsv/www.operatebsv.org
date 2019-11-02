@@ -12,7 +12,7 @@ Operate offers some distinct advantages over native Bitcom.
 
 ### Protocols are functions
 
-In Operate, protocols are functions, called "Ops". Anyone can write an Op and publish it to the blockchain and anyone can read the source of an Op to verify what it does. Ops are incredibly powerful and can be used to process data, perform calculations and operations, and return any kind of value.
+In Operate, protocols are functions, called "Ops". Anyone can write an Op and publish it to the blockchain and anyone can read the source of an Op to verify what it does. Ops are incredibly powerful and can be used to process data, perform calculations and operations, and return any computable value.
 
 Application developers no longer need to spend time implementing protocol specifications. Operate is a decentralised repository of pre-built, ready to roll, immutable functions.
 
@@ -31,9 +31,14 @@ Operate takes advantage of two other of unwriter's innovations: the [Bitcom pipe
 
 BOB views Bitcoin input and output scripts as "tapes" made up of "cells", where each cell is a single atomic procedure call. This metaphor fits Operate like a glove. In fact it's not even a metaphor, each cell IS a procedure call, it's an Op!
 
-`TODO:IMAGE OF TAPE`
+<figure class="mv4 mh0 pa0">
+  <img src="~@assets/images/tape.png"
+    srcset="~@assets/images/tape@2x.png 2x"
+    alt="Operate tape" />
+</figure>
 
-Each Op takes a number of parameters and returns a result known as the "state". The state is passed as an argument to the next Op, along with any other parameters, and a new state is returned. Each subsequent Op returns a new state until the last Op returns the tapes result.
+
+Each Op takes a number of parameters and returns a result known as the "state". The state is passed as an argument to the next Op, along with any other parameters, and a new state is returned. Each subsequent Op returns a new state until the last Op returns result of the tape.
 
 This approach is analogous to pure functional programming, all encapsulated in Bitcoin transactions. It is an incredibly flexible and powerful system.
 
@@ -204,7 +209,7 @@ A function can return any value, including other functions. Returned functions c
 
 Developers can also chose to extend the Lua VM with their own modules, even writing Elixir code in their own application that is called from within the Lua VM.
 
-This kind of flexibility is powerful and opens up wild use cases limited only by your imagination.
+This kind of flexibility is powerful and opens up use cases limited only by your imagination.
 
 ### Publishing Ops with the CLI
 

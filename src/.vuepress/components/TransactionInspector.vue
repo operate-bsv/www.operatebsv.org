@@ -21,7 +21,7 @@
     </div>
 
     <div v-if="showResult"
-      class="language-json"
+      class="language-json mt4"
       :class="{'is-loading': isLoading}">
       <pre class="language-json" style="margin:0;"><code v-html="scriptResult" /></pre> 
     </div>

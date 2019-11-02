@@ -27,9 +27,4 @@ export default {
     SideBar
   }
 }
-
 </script>
-
-<style lang="scss" scoped>
-
-</style>
