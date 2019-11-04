@@ -14,17 +14,20 @@
       </main>
     </div>
 
+    <Footer />
   </div>
 </template>
 
 <script>
 import NavBar from '@theme/components/NavBar.vue'
 import SideBar from '@theme/components/SideBar.vue'
+import Footer from '@theme/components/Footer.vue'
 
 export default {
   components: {
     NavBar,
-    SideBar
+    SideBar,
+    Footer
   }
 }
 </script>

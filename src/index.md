@@ -3,7 +3,7 @@ layout: Home
 ---
 
 ::: slot standfirst
-***Operate** is an extensible Bitcoin meta programming protocol.* It offers a way of constructing Turing Complete programs encapsulated in Bitcoin (SV) transactions that can be be used to process data, perform calculations and operations, and return any computable value.
+***Operate** is an extensible Bitcoin meta programming protocol.* It offers a way of constructing programs encapsulated in Bitcoin (SV) transactions that can be be used to process data, perform calculations and operations, and return any computable value.
 :::
 
 ::: slot features
@@ -11,7 +11,7 @@ layout: Home
   Write programs that return any computable value. Even write programs that write other programs!
 
 * ### Extensible VM
-  Create extensions to integrate Operate in any way with your own applications and hardware.
+  Create extensions to integrate Operate with your own applications and hardware in any way.
 
 * ### Decentralised eco-system
   Operate is a decentralised, permissionless repository of functions that anyone can use and contribute to.
@@ -22,6 +22,6 @@ layout: Home
 * ### Familiar conventions
   Operate's design is based on already familiar conventions and patterns established with Bitcom.
 
-* ### Connect to Bitcoin your way
+* ### Do Bitcoin your way
   Whether through Planaria, other API endpoints or directly to your Bitcoin node, you chose how Operate connects to Bitcoin.
 :::

@@ -84,8 +84,13 @@ a.header-anchor {
   p {
     margin: 1rem 0;
     max-width: 34em;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.5;
+  }
+  @media screen and (min-width: 30em) {
+    p {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -99,11 +104,11 @@ a.header-anchor {
     list-style: none;
   }
   li {
-    width: 45%;
+    width: 100%;
     margin-bottom: 2rem;
   }
   h3 {
-    margin: 0 0 1rem;
+    margin: 0 0 0.5rem;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.25;
@@ -112,6 +117,11 @@ a.header-anchor {
     margin: 0 0 0.75rem;
     font-size: 1rem;
     line-height: 1.35;
+  }
+  @media screen and (min-width: 30em) {
+    li {
+      width: 45%;
+    }
   }
 }
 

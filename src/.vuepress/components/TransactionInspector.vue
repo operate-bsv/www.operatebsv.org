@@ -1,8 +1,8 @@
 <template>
-  <div class="pa4 bg-near-white">
-    <div class="flex items-center">
-      <span class="mr2 f3 fw5 lh-title hot-pink">1.</span>
-      <span class="f3 fw5 dark-pink">Transaction inspector</span>
+  <div class="ph3 ph4-ns pv4 bg-near-white">
+    <div class="flex items-center f4 f3-ns lh-title fw5">
+      <span class="mr2 hot-pink">1.</span>
+      <span class="dark-pink">Transaction inspector</span>
     </div>
 
     <p class="measure-wide mv3 f5 lh-copy">

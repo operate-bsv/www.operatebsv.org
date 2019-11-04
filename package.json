@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "deploy": "npm run build && deploy.sh"
+    "deploy": "npm run build && ./deploy.sh"
   },
   "dependencies": {
     "axios": "^0.19.0",

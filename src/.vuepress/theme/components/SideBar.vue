@@ -1,14 +1,14 @@
 <template>
-  <aside class="pv4 pv5-l br b--light-gray | sidebar">
+  <aside class="pv5 br b--light-gray | sidebar">
     <component
       :is="affixComponent"
       v-if="affixComponent"
       relative-element-selector="#main"
-      style="width: 20rem;"
-      :offset="{ top: -40, bottom: 40 }">
+      class="sidebar-affix"
+      :offset="{ top: -40, bottom: 60 }">
       
       <h4 class="ma0 f5">
-        <router-link class="relative db ph3 ph4-l pv1 link dark-gray hover-hot-pink side-link"
+        <router-link class="relative db ph3 pl4-l pv1 link dark-gray hover-hot-pink side-link"
           :to="$page.path">
           {{ $page.title }}
         </router-link>
@@ -19,7 +19,7 @@
     <div v-else>
 
       <h4 class="ma0 f5">
-        <router-link class="relative db ph3 ph4-l pv1 link dark-gray hover-hot-pink side-link"
+        <router-link class="relative db ph3 pl4-l pv1 link dark-gray hover-hot-pink side-link"
           :to="$page.path">
           {{ $page.title }}
         </router-link>
@@ -31,7 +31,6 @@
 </template>
 
 <script>
-//import { Affix } from 'vue-affix'
 import SideLinks from '@theme/components/SideLinks.vue'
 
 export default {
@@ -66,9 +65,26 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
 .sidebar {
+  display: none;
   top: 62px;
-  width: 20rem;
+
+  @media screen and (min-width: 40em) {
+    display: block;
+    flex: 0 0 16rem;
+  }
+
+  @media screen and (min-width: 60em) {
+    flex: 0 0 20rem;
+  }
+}
+
+.sidebar-affix {
+  width: 16rem;
+
+  @media screen and (min-width: 60em) {
+    width: 20rem;
+  }
 }
 </style>

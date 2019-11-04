@@ -4,10 +4,11 @@
       Op:
       <span v-if="op">
         {{ op.name }}
-        <span class="f3 light-silver">&mdash;</span>
-        <span class="f3 mono green">0x{{ op.ref.toUpperCase() }}</span>
+        <span class="db di-ns f5 f4-ns f3-l">
+          <span class="dn di-ns light-silver">&mdash;</span>
+          <span class="mono silver">0x{{ op.ref.toUpperCase() }}</span>
+        </span>
       </span>
-      
     </h1>
     <router-link class="dib mb4 link f5 mid-gray hover-hot-pink"
       to="/library">
@@ -15,13 +16,13 @@
     </router-link>
 
     <template v-if="op">
-      <div class="flex justify-between">
-        <div class="mr3 mr4-l">
-          <table class="w-100 mb3 mono f6 lh-block">
+      <div class="flex-l justify-between-l">
+        <div class="">
+          <table class="dn dt-ns w-100 mb3 mono f6 lh-block">
             <tr>
               <th class="pr1 fw4 tl silver">TXID</th>
               <td class="pl1 mid-gray">
-                {{ op.txid }}
+                <span v-html="$options.filters.truncHash(op.txid)" />
                 <a :href="explorerUrl" class="link blue hover-hot-pink" target="_blank">
                   <LinkIcon :size="16" />
                 </a>
@@ -29,7 +30,7 @@
             </tr>
             <tr>
               <th class="pr1 fw4 tl silver">SHA-256</th>
-              <td class="pl1 mid-gray">{{ op.hash }}</td>
+              <td class="pl1 mid-gray" v-html="$options.filters.truncHash(op.hash)"></td>
             </tr>
             <tr>
               <th class="pr1 fw4 tl silver">Address</th>
@@ -40,7 +41,7 @@
             v-html="mardownComments" />
         </div>
         
-        <div class="w5 ml3 ml3-l">
+        <div class="dn db-l w5 ml4 ml5-l">
           <table class="w-100 mb3 f6 lh-block mid-gray collapse"
             v-if="Object.keys(op.meta).length">
             <thead>
@@ -137,6 +138,14 @@ export default {
           window.document.title = this.$title
         })
         .catch(e => this.$router.push('/library/'))
+    }
+  },
+
+  filters: {
+    truncHash: function(hash) {
+      return hash.substr(0, 32) +
+        `<span class="dn di-l">${ hash.substr(32, 64) }</span>` +
+        '<span class="dn-l">...</span>';
     }
   },
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table class="w-100 f7 f6-ns lh-copy collapse">
+    <table class="w-100 f7 f6-l lh-copy collapse">
       <thead class="bb b--light-gray">
         <tr>
           <th class="pv2 pr2 fw5 tl gray">Function</th>

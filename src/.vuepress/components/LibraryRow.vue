@@ -17,7 +17,7 @@
     </td>
     <td class="dn dtc-ns pv2 pl2">
       <span class="mono">{{ fn.address }}</span>
-      <span class="gray" v-if="fn.meta.author">({{ fn.meta.author }})</span>
+      <span class="dn di-l gray" v-if="fn.meta.author">({{ fn.meta.author }})</span>
     </td>
   </tr>
 </template>

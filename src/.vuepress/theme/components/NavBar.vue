@@ -1,13 +1,13 @@
 <template>
   <div class="flex items-center justify-between ph3 ph4-l | navbar">
-    <div class="pt1">
+    <div class="dn db-ns pt1">
       <router-link to="/" v-if="logo">
         <img src="~@assets/images/logo-sm.png"
           srcset="~@assets/images/logo-sm@2x.png 2x"
           alt="Operate | BSV" />
       </router-link>
     </div>
-    <NavLinks />
+    <NavLinks class="tc" />
   </div>
 </template>
 

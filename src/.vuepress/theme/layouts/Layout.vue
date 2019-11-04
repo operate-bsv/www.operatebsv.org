@@ -12,12 +12,14 @@
         <Content />
       </div>
     </main>
-    
+
+    <Footer />
   </div>
 </template>
 
 <script>
 import NavBar from '@theme/components/NavBar.vue'
+import Footer from '@theme/components/Footer.vue'
 
 export default {
   computed: {
@@ -27,7 +29,8 @@ export default {
   },
 
   components: {
-    NavBar
+    NavBar,
+    Footer
   }
 }
 </script>

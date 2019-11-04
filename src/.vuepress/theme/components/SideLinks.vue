@@ -1,7 +1,7 @@
 <template>
   <ul class="list ma0 pa0 f5 lh-copy" :class="level === 1 ? 'fw5' : 'fw4'">
     <li v-for="item in items">
-      <router-link class="relative db pv1 ph3 ph4-l link mid-gray hover-hot-pink outline-0 side-link"
+      <router-link class="relative db pv1 ph3 pl4-l link mid-gray hover-hot-pink outline-0 side-link"
         :to="item.path">
         <span class="db" :class="level === 1 ? 'pl0' : 'pl2'">
           {{ item.title }}
