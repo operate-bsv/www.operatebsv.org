@@ -1,23 +1,23 @@
 <template>
   <tr class="bg-animate hover-bg-washed-yellow bt b--light-gray pointer"
     :class="{'bt-0': index === 0 }"
-    @click="$router.push({ path: '/library/op/', query: { ref: fn.ref } })">
+    @click="$router.push({ path: '/library/op/', query: { ref: op.ref } })">
     <td class="pv2 pr2">
       <router-link class="link fw5 blue hover-hot-pink"
-        :to="{ path: '/library/op/', query: { ref: fn.ref } }"
+        :to="{ path: '/library/op/', query: { ref: op.ref } }"
         @click.native="$event.stopImmediatePropagation()">
-        {{ fn.name }}
+        {{ op.name }}
       </router-link>
     </td>
     <td class="dn dtc-l pa2">
-      {{ fn.meta.version }}
+      {{ op.meta.version }}
     </td>
     <td class="pa2 mono">
-      0x{{ fn.ref.toUpperCase() }}
+      0x{{ op.ref.toUpperCase() }}
     </td>
     <td class="dn dtc-ns pv2 pl2">
-      <span class="mono">{{ fn.address }}</span>
-      <span class="dn di-l gray" v-if="fn.meta.author">({{ fn.meta.author }})</span>
+      <span class="mono">{{ op.addr }}</span>
+      <span class="dn di-l gray" v-if="op.meta.author">({{ op.meta.author }})</span>
     </td>
   </tr>
 </template>
@@ -25,17 +25,11 @@
 <script>
 export default {
   props: {
-    function: {
+    op: {
       type: Object,
       required: true
     },
     index: true
-  },
-
-  data() {
-    return {
-      fn: this.function
-    }
   },
 
   computed: {

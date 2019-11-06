@@ -77,7 +77,7 @@ export default {
   computed: {
     opReturnPreview() {
       const code = 'OP_FALSE OP_RETURN\n'
-        +'  0x77EDF866\t# math/rand_int\n'
+        +'  0xB3D08D9E\t# math/rand_int\n'
         +`    "${ this.tx.num }" \t\t# numbers\n`
         +`    "${ this.tx.min }" \t\t# min\n`
         +`    "${ this.tx.max }"\t\t# max\n`
@@ -127,7 +127,7 @@ export default {
       const script = new bsv.Script();
       script.add( bsv.Opcode.OP_FALSE );
       script.add( bsv.Opcode.OP_RETURN );
-      script.add( bsv.deps.Buffer.from('77EDF866', 'hex') );
+      script.add( bsv.deps.Buffer.from('B3D08D9E', 'hex') );
       script.add( bsv.deps.Buffer.from(this.tx.num) );
       script.add( bsv.deps.Buffer.from(this.tx.min) );
       script.add( bsv.deps.Buffer.from(this.tx.max) );
@@ -141,14 +141,16 @@ export default {
 
     onPayment(payment) {
       if (payment) {
-        this.$emit('payment', payment.txid)
+        setTimeout(_ => {
+          this.$emit('payment', payment.txid)
+        }, 2500)
+        
       }
     }
   },
 
   components: {
     AlertIcon
-    //MoneyButton
   }
 }
 </script>

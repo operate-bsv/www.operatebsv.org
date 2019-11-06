@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import axios from 'axios'
 import prism from 'prismjs'
 import 'prismjs/components/prism-json'
 import AlertIcon from 'vue-material-design-icons/Alert'
+import api from '../api'
 
 export default {
   data() {
@@ -85,9 +85,8 @@ export default {
 
   methods: {
     loadTx() {
-      const url = `https://functions.chronoslabs.net/api/tapes/${ this.txid }`
       this.isLoading = true
-      return axios.get(url, { transformResponse: [this.transformResponse] })
+      return api.execTape(this.txid, { transformResponse: [this.transformResponse] })
         .then(r => {
           this.result = r.data.data
           this.isLoading = false

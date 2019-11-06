@@ -34,7 +34,7 @@
             </tr>
             <tr>
               <th class="pr1 fw4 tl silver">Address</th>
-              <td class="pl1 mid-gray">{{ op.address }}</td>
+              <td class="pl1 mid-gray">{{ op.addr }}</td>
             </tr>
           </table>
           <div class="pt1 measure-wide bt b--light-gray content__op"
@@ -59,13 +59,18 @@
           <table class="w-100 f6 lh-block mid-gray collapse">
             <thead>
               <tr>
-                <th class="pa1 dark-gray bg-light-gray tl" colspan="2">Versions (#todo)</th>
+                <th class="pa1 dark-gray bg-light-gray tl" colspan="2">Versions</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="bb b--light-gray" v-for="val, key in op.meta">
-                <td class="pa1 w4">0.0.1</td>
-                <td class="pa1 mono">abcdef</td>
+              <tr class="bb b--light-gray" v-for="v in versions">
+                <td class="pa1 w4">{{ v.meta ? v.meta.version : 'Unknown' }}</td>
+                <td class="pa1 mono">
+                  <router-link class="link blue hover-hot-pink"
+                    :to="{ path: '/library/op/', query: { ref: v.ref } }">
+                    0x{{ v.ref.toUpperCase() }}
+                  </router-link>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -80,18 +85,19 @@
 </template>
 
 <script>
-import axios from 'axios'
 import prism from 'prismjs'
 import 'prismjs/components/prism-lua'
 import markdown from 'markdown-it'
 import LinkIcon from 'vue-material-design-icons/OpenInNew'
+import api from '../api'
 
 const md = markdown()
 
 export default {
   data() {
     return {
-      op: null
+      op: null,
+      versions: []
     }
   },
 
@@ -101,8 +107,8 @@ export default {
     },
 
     comments() {
-      if (!this.op.script) return '';
-      return this.op.script
+      if (!this.op.fn) return '';
+      return this.op.fn
         .replace(/^--\[\[(.+)\]\]--.*/s, '$1')
          .replace(/\$REF/g, `0x${ this.op.ref.toUpperCase() }`)
         .replace(/^@\w+.*$/gm, '')
@@ -113,8 +119,8 @@ export default {
     },
 
     code() {
-      if (!this.op.script) return '';
-      return this.op.script
+      if (!this.op.fn) return '';
+      return this.op.fn
         .replace(/^--\[\[.+\]\]--/s, '')
         .trim()
     },
@@ -126,18 +132,32 @@ export default {
 
   beforeMount() {
     this.fetchOp()
+    this.fetchVersions()
+  },
+
+  watch: {
+    '$route.query.ref'() {
+      this.fetchOp()
+      this.fetchVersions()
+    }
   },
 
   methods: {
     fetchOp() {
-      const url = 'https://functions.chronoslabs.net/api/functions/' + this.$route.query.ref;
-      return axios.get(url, { params: { script: true } })
+      return api.getOp(this.$route.query.ref)
         .then(r => {
           this.op = r.data.data;
-          this.$page.frontmatter.title = this.op.name
-          window.document.title = this.$title
+          this.$page.frontmatter.title = this.op.name;
+          window.document.title = this.$title;
         })
         .catch(e => this.$router.push('/library/'))
+    },
+
+    fetchVersions() {
+      return api.getVersions(this.$route.query.ref)
+        .then(r => {
+          this.versions = r.data.data;
+        })
     }
   },
 
