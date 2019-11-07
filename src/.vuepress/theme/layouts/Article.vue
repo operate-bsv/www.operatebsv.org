@@ -5,11 +5,8 @@
     </header>
 
     <main class="pv4 ph3 ph4-l">
-      <div class="w-100 mw8 center">
-        <component
-          :is="$route.meta.component"
-          v-if="isCustomRoute" />
-        <Content v-else />
+      <div class="w-100 mw7 center">
+        <Content />
       </div>
     </main>
 

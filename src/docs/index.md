@@ -45,9 +45,7 @@ This approach is analogous to pure functional programming, all encapsulated in B
 
 ## Creating a program / tape
 
-No new tools are needed to craft a transaction that is a valid Operate program. If you are already familiar with Bitcom's conventions to construct transactions, the same conventions are used by Operate. In fact, many of these legacy transactions are already perfectly valid Operate programs!
-
-<p style="font-size: 5rem;">🤯</p>
+No new tools are needed to craft a transaction that is a valid Operate program. If you are already familiar with Bitcom's conventions to construct transactions, the same conventions are used by Operate. In fact, many of these legacy transactions are already perfectly valid Operate programs! <span class="pl2 f2 v-top">🤯</span>
 
 The following example pipes together two Ops:
 
@@ -95,7 +93,7 @@ script = new bsv.Script({ chunks })
 
 ### Using Elixir
 
-Or alternatively using [BSV-ex](https://github.com/libitx/bsv-ex) (Elixir):
+Or alternatively using [BSV-ex](https://hexdocs.pm/bsv) (Elixir):
 
 ```elixir
 chunks = [

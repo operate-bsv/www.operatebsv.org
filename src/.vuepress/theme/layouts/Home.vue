@@ -62,12 +62,6 @@ import NavBar from '@theme/components/NavBar.vue'
 import Footer from '@theme/components/Footer.vue'
 
 export default {
-  computed: {
-    isCustomRoute() {
-      return !!this.$route.meta.component;
-    }
-  },
-
   components: {
     NavBar,
     Footer

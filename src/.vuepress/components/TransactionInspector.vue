@@ -86,7 +86,7 @@ export default {
   methods: {
     loadTx() {
       this.isLoading = true
-      return api.execTape(this.txid, { transformResponse: [this.transformResponse] })
+      return api.runTape(this.txid, { transformResponse: [this.transformResponse] })
         .then(r => {
           this.result = r.data.data
           this.isLoading = false

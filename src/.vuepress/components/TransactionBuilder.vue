@@ -6,7 +6,7 @@
     </div>
     <p class="measure-wide mv3 f5 lh-copy">
       Become the latest Bitcoin millionaire by letting Bitcoin pick your lottery
-      numbers this week. The <code>math/rand_int</code> function will
+      numbers this week. The <code class="bg-white">math/rand_int</code> function will
       deterministicly calculate random numbers in your specified range.
     </p>
 
@@ -158,5 +158,9 @@ export default {
 <style lang="scss" scoped>
 input[type="text"]:focus {
   border-color: #FF41B4;
+}
+
+.bg-white {
+  background: #fff !important;
 }
 </style>

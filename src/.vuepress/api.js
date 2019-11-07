@@ -19,7 +19,11 @@ export default {
     return api.get(`/ops/${ ref }/versions`, config)
   },
 
-  execTape(txid, config = {}) {
+  getTape(txid, config = {}) {
     return api.get(`/tapes/${ txid }`, config)
+  },
+
+  runTape(txid, config = {}) {
+    return api.post(`/tapes/${ txid }`, null, config)
   }
 }
