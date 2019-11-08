@@ -216,7 +216,7 @@ This kind of flexibility is powerful and opens up use cases limited only by your
 
 ### Publishing Ops with the CLI
 
-The Operate CLI provides a set of tools to help create, manage and publish Ops. It can be installed using `npm` or `yarn`.
+The [Operate CLI](https://github.com/operate-bsv/op_cli) provides a set of tools to help create, manage and publish Ops. It can be installed using `npm` or `yarn`.
 
 ```bash
 # Install with npm
@@ -260,4 +260,4 @@ When ready (and your publishing wallet is funded), use the `publish` command to 
 > operate publish my/function
 ```
 
-It is recommended to test functions thoroughly before publishing on the blockchain. View the [operate/library](https://github.com/operate-bsv/library) repository for examples of setting up an Op library with an Ex-Unit test suite.
+It is recommended to test functions thoroughly before publishing on the blockchain. View the [operate/op_library](https://github.com/operate-bsv/op_library) repository for examples of setting up an Op library with an Ex-Unit test suite.
