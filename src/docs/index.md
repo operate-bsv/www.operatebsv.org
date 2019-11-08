@@ -216,32 +216,45 @@ This kind of flexibility is powerful and opens up use cases limited only by your
 
 ### Publishing Ops with the CLI
 
-The Operate CLI provides a set of tools to help create, manage and publish Ops. It can be installed using `npm`.
+The Operate CLI provides a set of tools to help create, manage and publish Ops. It can be installed using `npm` or `yarn`.
 
 ```bash
-> npm install -g operate-cli
+# Install with npm
+> npm install -g @operate/cli
+
+# Install with yarn
+> yarn global add @operate/cli
 ```
 
-Once installed, use the `init` command to initialise a working directory for your Op(s). This will generate a `.bit` environment file in your working directory containing your publishing address and private key.
+You can list all available commands and/or get usage help for a specific command.
+
+```bash
+# List available commands
+> operate --help 
+
+# Get help on any command
+> operate [command] --help
+```
+
+Use the `init` command to initialise a working directory for your Op(s). This will generate a `.bit` environment file in your working directory containing your publishing address and private key.
 
 ```bash
 > operate init path/to/directory
 ```
 
-You will need to fund your publishing wallet before publishing any Op. From within your working directory, use the `wallet` to see your wallet address and balance.
+You will need to fund your publishing wallet before publishing any Op. From within your working directory, use the `wallet` command to see your wallet address and balance.
 
 ```bash
 > operate wallet
 ```
 
-To create a new local Op, use the `new` command.
+Use the `new` command to generate a new blank function in the `src` folder of your working directory.
 
 ```bash
-# operate new --help [see help for the command]
 > operate new my/function -a arg1 -a arg2
 ```
 
-Finally to publish your Op on the blockchain, use the `publish` command.
+When ready (and your publishing wallet is funded), use the `publish` command to publish the Op to the blockchain.
 
 ```bash
 > operate publish my/function
