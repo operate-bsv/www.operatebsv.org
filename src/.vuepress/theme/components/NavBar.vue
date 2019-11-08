@@ -28,10 +28,5 @@ export default {
 <style lang="scss">
 .navbar {
   height: 62px;
-
-  .router-link-active:not(.nav-item-home),
-  .router-link-exact-active {
-    border-color: #FF41B4;
-  }
 }
 </style>

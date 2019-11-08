@@ -3,7 +3,7 @@
     <div class="w-100 mw8 center">
       <NavLinks class="mb4" />
       <div class="pt4 measure-wide bt b--light-gray">
-        <ul class="ma0 mb4 ph0 pv3 list f6 fw7 lh-block">
+        <!--<ul class="ma0 mb4 ph0 pv3 list f6 fw7 lh-block">
           <li class="dib mb3 mb0-ns mr3-ns">
             <a href="https://twitter.com/operate_bsv"
               target="_blank"
@@ -20,9 +20,27 @@
               <span class="db">Check the code</span>
             </a>
           </li>
+        </ul>-->
+        <p class="mt0 mb4 f7 lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at diam quis nunc blandit ornare sed eu massa. Phasellus quis nisl a purus varius gravida ullamcorper at dui.</p>
+        <ul class="dib list ma0 ph0 pt0 pb4 f6 lh-copy bb b--light-gray">
+          <li class="dib mr3">
+            <a href="https://twitter.com/operate_bsv"
+              target="_blank"
+              class="link blue hover-hot-pink">
+              <TwitterIcon :size="20" class="mr1 v-mid" />
+              <span>Follow @operate_bsv</span>
+            </a>
+          </li>
+          <li class="dib mr3">
+            <a href="https://github.com/operate-bsv"
+              target="_blank"
+              class="link blue hover-hot-pink">
+              <GithubIcon :size="20" class="mr1 v-mid" />
+              <span>View on Github</span>
+            </a>
+          </li>
         </ul>
-        <p class="mt0 mb3 f7 lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at diam quis nunc blandit ornare sed eu massa. Phasellus quis nisl a purus varius gravida ullamcorper at dui.</p>
-        <p class="mt5 mb3 f7 lh-copy">&copy; Copyright 2019 Chronos Labs Ltd.</p>
+        <p class="mt4 mb3 f7 lh-copy">&copy; Copyright 2019 Chronos Labs Ltd.</p>
       </div>
     </div>
   </footer>
@@ -43,13 +61,5 @@ export default {
 </script>
 
 <style lang="scss">
-.footer-btn {
-  transition: color .15s ease-in,
-              background-color .15s ease-in,
-              border-color .15s ease-in;
-  &:hover {
-    background-color: #FF41B4;
-    border-color: transparent;
-  }
-}
+
 </style>

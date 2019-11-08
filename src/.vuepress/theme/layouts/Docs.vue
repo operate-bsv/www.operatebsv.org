@@ -7,7 +7,7 @@
     <div class="flex">
       <SideBar />
 
-      <main id="main" class="flex-auto pv4 ph3 ph4-l">
+      <main id="main" class="flex-auto pt4 pb5 ph3 ph4-l">
         <div class="w-100 mw7 center">
           <Content/>
         </div>

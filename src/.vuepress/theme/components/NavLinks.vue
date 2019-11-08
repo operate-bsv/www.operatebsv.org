@@ -34,4 +34,9 @@ export default {
 li:last-child {
   margin-right: 0 !important;
 }
+
+.router-link-active:not(.nav-item-home),
+.router-link-exact-active {
+  border-color: #FF41B4;
+}
 </style>
