@@ -4,7 +4,7 @@ layout: Home
 ---
 
 ::: slot standfirst
-***Operate** is an extensible Bitcoin meta programming protocol.* It offers a way of writing and running programs encapsulated in Bitcoin (SV) transactions that can be be used to process data, perform calculations and operations, and return any computable value.
+***Operate** is an extensible Bitcoin meta programming protocol.* It offers a way of running programs encapsulated in Bitcoin (SV) transactions that can be be used to process data, perform calculations and operations, and return any computable value.
 :::
 
 ::: slot features
