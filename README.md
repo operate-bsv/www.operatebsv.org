@@ -14,7 +14,12 @@ To run the website locally:
 
 * Install dependencies with `yarn install`
 * Start Vuepress with `yarn run dev`
-* Visit [http://localhost:8080](http://localhost:8080) from your browser
+* Visit [`http://localhost:8080`](http://localhost:8080) from your browser
 
 A couple of components rely on a locally running instance of [Operate | API](https://github.com/operate-bsv/op_api), although this is not necessary for working with the static pages and documentation.
 
+## License
+
+[MIT](https://github.com/operate-bsv/www.operatebsv.org/blob/master/LICENSE.md)
+
+© Copyright 2019 Chronos Labs Ltd.
