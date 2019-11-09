@@ -32,8 +32,8 @@ Operate takes advantage of two other of unwriter's innovations: the [Bitcom pipe
 BOB views Bitcoin input and output scripts as "tapes" made up of "cells", where each cell is a single atomic procedure call. This metaphor fits Operate like a glove. In fact it's not even a metaphor, each cell IS a procedure call, it's an Op!
 
 <figure class="mv4 mh0 pa0">
-  <img src="~@assets/images/tape.png"
-    srcset="~@assets/images/tape@2x.png 2x"
+  <img src="~@assets/images/cells.png"
+    srcset="~@assets/images/cells@2x.png 2x"
     alt="Operate tape" />
 </figure>
 

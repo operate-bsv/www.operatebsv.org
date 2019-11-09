@@ -1,18 +1,23 @@
 ---
-title: An extensible Bitcoin meta programming protocol
+title: On-chain functions. Turing complete Bitcoin. Limitless possibilities.
+description: Operate is a toolset to help developers build applications, games and products on top of Bitcoin.
+image: '/social-card.png'
 layout: Home
 ---
 
 ::: slot standfirst
-***Operate** is an extensible Bitcoin meta programming protocol.* It offers a way of running programs encapsulated in Bitcoin (SV) transactions that can be be used to process data, perform calculations and operations, and return any computable value.
+**Operate** is a toolset to help developers build applications, games and products on top of Bitcoin. Operate enables you to write functions, called Ops, and call those functions from programs encapsulated in Bitcoin transactions. Extend Bitcoin's capabilities to the limits of your imagination.
 :::
 
 ::: slot features
+* ### On-chain functions
+  Create functions that can process data, perform calculations and operations, and initiate off-chain actions.
+
 * ### Turing complete Bitcoin
   Write programs that return any computable value. Even write programs that write other programs!
 
 * ### Extensible API
-  Create extensions to integrate Operate with your own applications and hardware in any way.
+  Create extensions to integrate Operate with your own applications and systems in any way.
 
 * ### Decentralised eco-system
   A decentralised, permissionless repository of functions that anyone can use and contribute to.
