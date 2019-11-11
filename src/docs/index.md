@@ -125,13 +125,13 @@ In true Blue Peter style, here's one we made earlier:
 The [Operate agent](https://hexdocs.pm/operate) (Elixir) is used to load and run programs from transactions. To install the agent in your application, add it to your list of dependencies in `mix.exs`.
 
 ::: warning
-The most recent `luerl` package published on hex.pm is based on Lua 5.2 which may not be compatible with all Ops. It is suggested to override the `luerl` dependency with the latest development version to benefit from Lua 5.3.
+The most recent `luerl` package published on hex.pm is based on **Lua 5.2** which is not compatible with all Ops. It is recommended to override the `luerl` dependency with the latest development version to benefit from **Lua 5.3**.
 :::
 
 ```elixir
 def deps do
   [
-    {:operate, "~> 0.1.0-beta.1"},
+    {:operate, "~> 0.1.0-beta"},
     {:luerl, github: "rvirding/luerl", branch: "develop", override: true}
   ]
 end

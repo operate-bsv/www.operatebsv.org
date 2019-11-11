@@ -6,7 +6,7 @@ layout: Home
 ---
 
 ::: slot standfirst
-**Operate** is a toolset to help developers build applications, games and products on top of Bitcoin. Operate enables you to write functions, called Ops, and call those functions from programs encapsulated in Bitcoin transactions. Extend Bitcoin's capabilities to the limits of your imagination.
+**Operate** is a toolset to help developers build applications, games and services on top of Bitcoin (SV). Operate lets you create and run on-chain functions, called "Ops", enabling transactions that can implement application logic and securely integrate with other services and platforms.
 :::
 
 ::: slot features
@@ -17,7 +17,7 @@ layout: Home
   Write programs that return any computable value. Even write programs that write other programs!
 
 * ### Extensible API
-  Create extensions to integrate Operate with your own applications and systems in any way.
+  Create extensions to integrate Operate with your own application and other microservices.
 
 * ### Decentralised eco-system
   A decentralised, permissionless repository of functions that anyone can use and contribute to.
@@ -29,5 +29,5 @@ layout: Home
   Operate's design is based on already familiar conventions and patterns established with Bitcom.
 
 * ### Do Bitcoin your way
-  Whether through Planaria, other API endpoints or directly to your Bitcoin node, you chose how Operate connects to Bitcoin.
+  You chose how Operate connects to Bitcoin, whether through Planaria, API gateways or directly to your own Bitcoin node.
 :::

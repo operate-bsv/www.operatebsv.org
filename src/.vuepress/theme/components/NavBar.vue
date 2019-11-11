@@ -7,7 +7,7 @@
           alt="Operate | BSV" />
       </router-link>
     </div>
-    <NavLinks class="tc" />
+    <NavLinks />
   </div>
 </template>
 

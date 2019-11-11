@@ -33,6 +33,18 @@ module.exports = {
       sidebarLinkSelector: '.side-link',
       headerAnchorSelector: '.header-anchor'
     }],
+    ['@vuepress/blog', {
+      directories: [
+        {
+          id: 'articles',
+          dirname: '_articles',
+          layout: 'ArticleIndex',
+          itemLayout: 'Article',
+          path: '/blog/',
+          itemPermalink: '/blog/:year/:month/:day/:slug'
+        },
+      ]
+    }],
     ['autometa', {
       site: {
         name   : 'Operate',

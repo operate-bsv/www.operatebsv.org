@@ -1,7 +1,0 @@
----
-permalink: /blog
----
-
-# Articles
-
-<BlogList />
