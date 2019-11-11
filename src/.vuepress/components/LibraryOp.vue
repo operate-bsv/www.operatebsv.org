@@ -43,7 +43,7 @@
         
         <div class="dn db-l w5 ml4 ml5-l">
           <table class="w-100 mb3 f6 lh-block mid-gray collapse"
-            v-if="Object.keys(op.meta).length">
+            v-if="hasMeta">
             <thead>
               <tr>
                 <th class="pa1 dark-gray bg-light-gray tl" colspan="2">Meta</th>
@@ -109,7 +109,7 @@ export default {
     comments() {
       if (!this.op.fn) return '';
       return this.op.fn
-        .replace(/^--\[\[(.+)\]\]--.*/s, '$1')
+        .replace(/^--\[\[(.+)\]\]-?-?.*/s, '$1')
          .replace(/\$REF/g, `0x${ this.op.ref.toUpperCase() }`)
         .replace(/^@\w+.*$/gm, '')
     },
@@ -121,12 +121,16 @@ export default {
     code() {
       if (!this.op.fn) return '';
       return this.op.fn
-        .replace(/^--\[\[.+\]\]--/s, '')
+        .replace(/^--\[\[.+\]\]-?-?/s, '')
         .trim()
     },
 
     highlightedCode() {
       return prism.highlight(this.code, prism.languages.lua, 'lua');
+    },
+
+    hasMeta() {
+      return Object.keys(this.op.meta || {}).length > 0;
     }
   },
 

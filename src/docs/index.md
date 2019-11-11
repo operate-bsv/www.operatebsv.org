@@ -20,14 +20,14 @@ Application developers no longer need to spend time implementing protocol specif
 
 ### Referencing Ops
 
-Ops are referenced by the first 4 bytes of the SHA-256 hash of the function. This allows programs to keep a compact and succinct form, whilst retaining all the benefits of a decentralised universal naming mechanism.
+Ops are referenced by the first 4 bytes of the SHA-256 hash of the function. This allows transaction scripts to keep a compact and succinct form, whilst retaining all the benefits of a decentralised universal naming mechanism.
 
 *(In the unlikely but possible scenario of two Ops sharing the same first 4 bytes from it's SHA-256 hash, the second function will be referred to by the first 5 bytes).*
 
 
 ### Functional programming
 
-Operate takes advantage of two other of unwriter's innovations: the [Bitcom pipeline](https://github.com/unwriter/Bitcom/issues/2) and [BOB (Bitcoin OP_RETURN Bytecode)](https://medium.com/@_unwriter/hello-bob-94701d278afb).
+Operate takes advantage of two other unwriter innovations: the [Bitcom pipeline](https://github.com/unwriter/Bitcom/issues/2) and [BOB (Bitcoin OP_RETURN Bytecode)](https://medium.com/@_unwriter/hello-bob-94701d278afb).
 
 BOB views Bitcoin input and output scripts as "tapes" made up of "cells", where each cell is a single atomic procedure call. This metaphor fits Operate like a glove. In fact it's not even a metaphor, each cell IS a procedure call, it's an Op!
 
@@ -181,7 +181,7 @@ For more information on how to use and configure Operate, read the agent's [full
 
 ## Writing Ops
 
-It wont always be necessary for developers to write their own Ops, but occaisionally you may find an Op that doesn't quite work exactly how you want it to. Or maybe you want to implement your own new protocol. It's time to write an Op.
+As the public [repository of Ops](/library) grows, developers may find they can use Operate without creating their own Ops. But occaisionally it may be necessary to create and publish your own bespoke Op.
 
 ### Anatomy of an Op
 
@@ -208,7 +208,7 @@ The comment block immediately prior to the function should be used to add docume
 
 Most Ops will probably be simple, single purpose functions, designed to do one thing and do it well. However, the Lua VM and agent can be combined to very powerful effect.
 
-A function can return any value, including other functions. Returned functions can then be called in your own application's code, outside of Lua. This is a great way of passing in private data such as keys, without permanently attaching them to the Lua VM.
+A function can return any value, including other functions. Returned functions can then be called in your own application's code, outside of Lua. This is a great way of passing in private data such as keys, without permanently exposing them to the Lua VM.
 
 Developers can also chose to extend the Lua VM with their own modules, even writing Elixir code in their own application that is called from within the Lua VM.
 
