@@ -41,7 +41,7 @@ module.exports = {
           layout: 'ArticleIndex',
           itemLayout: 'Article',
           path: '/blog/',
-          itemPermalink: '/blog/:year/:month/:day/:slug'
+          itemPermalink: '/blog/:slug'
         },
       ]
     }],
@@ -62,6 +62,12 @@ module.exports = {
       { text: 'Playground', link: '/playground' },
       { text: 'Articles', link: '/blog' }
     ]
+  },
+
+  markdown: {
+    externalLinks: {
+      target: '_blank', rel: 'noopener' 
+    }
   },
 
   dest: './dist',

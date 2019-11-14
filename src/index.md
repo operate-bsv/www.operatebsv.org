@@ -22,7 +22,7 @@ layout: Home
 * ### Flexible integration options
   Create extensions to integrate Operate with your own application and other microservices.
 
-* ### Decentralised eco-system
+* ### Decentralised ecosystem
   A decentralised, permissionless repository of functions that anyone can use and contribute to.
 
 * ### Content addressable

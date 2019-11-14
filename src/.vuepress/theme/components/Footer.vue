@@ -4,7 +4,7 @@
       :class="widthClass">
       <NavLinks class="mb4" />
       <div class="pt4 measure-wide bt b--light-gray">
-        <p class="mt0 mb4 f7 lh-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at diam quis nunc blandit ornare sed eu massa. Phasellus quis nisl a purus varius gravida ullamcorper at dui.</p>
+        <p class="mt0 mb4 f7 lh-copy">Have questions? Need help getting started? Feel free to reach out to us on Twitter, open a Github issue, or find us in <a class="link blue hover-hot-pink" href="https://bitdb.network/atlantis">Atlantis Slack</a>.</p>
         <ul class="dib list ma0 ph0 pt0 pb4 f6 lh-copy bb b--light-gray">
           <li class="dib mr3">
             <a href="https://twitter.com/operate_bsv"
