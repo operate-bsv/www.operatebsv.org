@@ -1,4 +1,5 @@
 ---
+image: /social-card.png
 layout: Docs
 ---
 

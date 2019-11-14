@@ -45,16 +45,28 @@ module.exports = {
         },
       ]
     }],
-    ['autometa', {
-      site: {
-        name   : 'Operate',
-        twitter: 'operate_bsv'
+    ['seo', {
+      type($page) {
+        return $page.regularPath.startsWith('/_articles') ? 'article' : 'website';
       },
-      canonical_base: 'https://www.operatebsv.org'
+      author($page, $site) {
+        return {
+          name: 'Libs',
+          twitter: '@libitx'
+        }
+      },
+      twitterCard($page) {
+        return $page.frontmatter.image ? 'summary_large_image' : 'summary';
+      },
+      customMeta(add) {
+        add('twitter:site', '@operate_bsv')
+      }
     }]
   ],
 
   themeConfig: {
+    domain: 'https://www.operatebsv.org',
+    author: 'Libs',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/docs' },

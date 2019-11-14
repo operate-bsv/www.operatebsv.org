@@ -2,7 +2,7 @@
 title: Introducing Operate
 date: 2019-11-15
 description: Celebrating a year of BSV with the launch of our most ambitious project yet.
-image: /2019/11/pipes.png
+image: /social-card.png
 banner: /2019/11/pipes.png
 card: /2019/11/pipes-card.png
 dark: true

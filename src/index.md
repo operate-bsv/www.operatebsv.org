@@ -1,7 +1,7 @@
 ---
 title: On-chain functions. Turing complete Bitcoin. Limitless possibilities.
 description: Operate is a toolset to help developers build applications, games and products on top of Bitcoin.
-image: '/social-card.png'
+image: /social-card.png
 layout: Home
 ---
 

@@ -21,7 +21,7 @@
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
     "vuepress": "^1.2.0",
-    "vuepress-plugin-autometa": "^0.1.12",
-    "vuepress-plugin-container": "^2.1.0"
+    "vuepress-plugin-container": "^2.1.0",
+    "vuepress-plugin-seo": "^0.1.2"
   }
 }
