@@ -29,10 +29,6 @@ module.exports = {
         '/': 'Danger'
       }
     }],
-    ['@vuepress/active-header-links', {
-      sidebarLinkSelector: '.side-link',
-      headerAnchorSelector: '.header-anchor'
-    }],
     ['@vuepress/blog', {
       directories: [
         {
@@ -42,8 +38,15 @@ module.exports = {
           itemLayout: 'Article',
           path: '/blog/',
           itemPermalink: '/blog/:slug'
-        },
+        }
       ]
+    }],
+    ['@vuepress/active-header-links', {
+      sidebarLinkSelector: '.side-link',
+      headerAnchorSelector: '.header-anchor'
+    }],
+    ['@vuepress/google-analytics', {
+      'ga': 'UA-133658926-2'
     }],
     ['seo', {
       type($page) {
