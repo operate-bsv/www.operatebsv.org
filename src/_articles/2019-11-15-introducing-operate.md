@@ -70,7 +70,7 @@ Using Lua is a design choice that may raise a few eyebrows, and it's a decision 
 
 Lua is designed to be used as an embedded scripting language. It is a lightweight language that can be safely sandboxed. This will allow us to create agents in different languages, and run Operate programs across platforms in a consistent, safe and reliable way.
 
-Lua is a simple language with few concepts, and can be easily learned in a few hours. Its simplicity does come at the cost of elegant design or useful features. Lua is a nimble, stable and reliable language - traits that fit the BSV ethos well.
+Lua is a simple language with few concepts, and can be easily learned in a few hours. Its simplicity doesn't come at the cost of elegant design or useful features. Lua is a nimble, stable and reliable language - traits that fit the BSV ethos well.
 
 ## How to get started
 
