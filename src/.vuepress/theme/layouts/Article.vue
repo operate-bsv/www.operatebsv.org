@@ -4,30 +4,33 @@
       <NavBar />
     </header>
 
-    <main class="">
-      <article class="">
+    <main>
+      <article itemscope itemtype="http://schema.org/Article">
+        <meta itemprop="url" :content="$site.themeConfig.domain + $page.path">
         <header class="mb5 ph3 ph4-l"
           :class="bannerClasses"
           :style="bannerStyles">
           <div class="w-100 mw7 pv4 center bb b--light-gray">
-            <h1 class="mb2 f2 lh-title">{{ $page.frontmatter.title }}</h1>
+            <h1 class="mb2 f2 lh-title" itemprop="name">
+              {{ $page.frontmatter.title }}
+            </h1>
             <ul class="list ma0 pa0 f6 lh-block gray">
               <li class="dib mr3" v-if="this.$page.frontmatter.date">
                 <time :date="pubDateDB" pubdate>
                   <CalendarIcon :size="20" class="dib mr1 silver v-mid" />
-                  {{ pubDateStr }}
+                  <span itemprop="datePublished">{{ pubDateStr }}</span>
                 </time>
               </li>
               <li class="dib mr3" v-if="$page.frontmatter.author">
                 <AccountBoxIcon :size="20" class="dib mr1 silver v-mid" />
-                {{ $page.frontmatter.author }}
+                <span itemprop="author">{{ $page.frontmatter.author }}</span>
               </li>
             </ul>
           </div>
         </header>
 
         <div class="pb4 pb5-l ph3 ph4-l">
-          <Content class="w-100 mw7 center" />
+          <Content class="w-100 mw7 center" itemprop="articleBody" />
         </div>
         
       </article>
@@ -49,7 +52,7 @@ export default {
     bannerClasses() {
       if (!this.$page.frontmatter.banner) return;
       let str = 'flex flex-column justify-end bg-center cover article-banner';
-      str += this.$page.frontmatter.dark ? ' article-banner--dark' : ' article-banner--light';
+      str += this.$page.frontmatter.dark ? ' bg-mid-gray article-banner--dark' : ' article-banner--light';
       return str;
     },
 
@@ -83,6 +86,12 @@ export default {
 .article-banner {
   div.bb {
     border: none;
+  }
+}
+
+.article-banner--light {
+  h1, ul {
+    text-shadow: 0 0 1rem rgba(#fff, 1);
   }
 }
 

@@ -8,7 +8,10 @@
       <div class="w-100 mw8 center">
         <h1 class="f2 lh-title">Articles</h1>
 
-        <article v-for="post in $pagination.pages" class="mb4 flex-ns justify-between-ns">
+        <article class="mb4 flex-ns justify-between-ns"
+          itemscope itemtype="http://schema.org/Article"
+          v-for="post in $pagination.pages">
+          <meta itemprop="url" :content="$site.themeConfig.domain + post.path">
           <div class="w-60-ns w-two-thirds-l pr2-ns pr3-l mb3">
             <a class="db link bg-center cover article-card"
               :href="post.path"
@@ -18,8 +21,12 @@
           </div>
           <div class="w-40-ns w-third-l pl2-ns pl3-l pb3">
             <a class="no-underline" :href="post.path">
-              <h2 class="mt0 mb1 f3 lh-title link dark-gray hover-hot-pink">{{ post.title }}</h2>
-              <p class="mt0 mb3 mb4-l f5 lh-copy link gray hover-hot-pink">
+              <h2 class="mt0 mb1 f3 lh-title link dark-gray hover-hot-pink"
+                itemprop="name">
+                {{ post.title }}
+              </h2>
+              <p class="mt0 mb3 mb4-l f5 lh-copy link gray hover-hot-pink"
+                itemprop="description">
                 {{ post.frontmatter.description }}
               </p>
             </a>
@@ -27,12 +34,12 @@
               <li class="dib mr3" v-if="post.frontmatter.date">
                 <time :date="pubDateDB(post)" pubdate>
                   <CalendarIcon :size="iconSize" class="dib silver v-mid" />
-                  {{ pubDateStr(post) }}
+                  <span itemprop="datePublished">{{ pubDateStr(post) }}</span>
                 </time>
               </li>
               <li class="dib mr3" v-if="post.frontmatter.author">
                 <AccountBoxIcon :size="iconSize" class="dib silver v-mid" />
-                {{ post.frontmatter.author }}
+                <span itemprop="author">{{ post.frontmatter.author }}</span>
               </li>
             </ul>
           </div>
