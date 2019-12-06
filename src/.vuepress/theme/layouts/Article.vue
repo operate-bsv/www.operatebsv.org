@@ -11,10 +11,10 @@
           :class="bannerClasses"
           :style="bannerStyles">
           <div class="w-100 mw7 pv4 center bb b--light-gray">
-            <h1 class="mb2 f2 lh-title" itemprop="name">
-              {{ $page.frontmatter.title }}
+            <h1 class="mv0 f2 lh-title" itemprop="name">
+              <span :class="titleClasses">{{ $page.frontmatter.title }}</span>
             </h1>
-            <ul class="list ma0 pa0 f6 lh-block gray">
+            <ul class="mb0 list f6 lh-block gray" :class="metaClasses">
               <li class="dib mr3" v-if="this.$page.frontmatter.date">
                 <time :date="pubDateDB" pubdate>
                   <CalendarIcon :size="20" class="dib mr1 silver v-mid" />
@@ -62,6 +62,16 @@ export default {
         height: '24rem',
         backgroundImage: `url(${ this.$page.frontmatter.banner })`
       }
+    },
+
+    titleClasses() {
+      if (!this.$page.frontmatter.highlight) return;
+      return `dib ph3 pv2 ${ this.$page.frontmatter.highlight }`;
+    },
+
+    metaClasses() {
+      if (!this.$page.frontmatter.highlight) return 'mt2 pa0';
+      return `dib mt0 ph3 pv2 ${ this.$page.frontmatter.highlight }`;
     },
 
     pubDateDB() {
