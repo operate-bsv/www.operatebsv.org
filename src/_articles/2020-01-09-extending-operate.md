@@ -72,6 +72,3 @@ You can create Bitcoin transactions that trigger off-chain processes such as ima
 There are all sorts of microservices that can now be built on top of Bitcoin, and all sorts of creative ways Bitcoin can tightly integrate with your application or product.
 
 It's time to build!
-
-
-
