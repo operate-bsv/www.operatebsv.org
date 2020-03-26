@@ -72,7 +72,13 @@ module.exports = {
     author: 'Libs',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/docs' },
+      { text: 'Docs', link: '/docs', items: [
+        { text: 'Introduction', link: '/docs' },
+        { text: 'Getting started', link: '/docs/getting-started' },
+        { text: 'Using the Agent', link: '/docs/using-the-agent' },
+        { text: 'Publishing Ops', link: '/docs/publishing-ops' },
+        { text: 'Extending Operate', link: '/docs/extensions' }
+      ]},
       { text: 'Library', link: '/library' },
       { text: 'Playground', link: '/playground' },
       { text: 'Articles', link: '/blog' }
