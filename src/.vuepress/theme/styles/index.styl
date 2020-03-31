@@ -5,6 +5,34 @@ pre, code, .code, .mono {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
+table {
+  width: 100%;
+  line-height: 1.5;
+  border-collapse: collapse;
+  border-bottom: 2px solid #333;
+
+  th, td {
+    text-align: left;
+    padding: 0.5rem;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:right-child {
+      padding-right: 0;
+    }
+  }
+  thead {
+    td, th {
+      border-bottom: 2px solid #6a6a6a;
+    }
+  }
+  tbody {
+    td, th {
+      border-bottom: 1px solid #9a9a9a;
+    }
+  }
+}
+
 a {
   outline: none !important;
 }

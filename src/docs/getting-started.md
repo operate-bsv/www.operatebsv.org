@@ -63,7 +63,7 @@ In the unlikely scenario that the first 4 bytes collides with an existing Op ref
 
 ## Creating Tapes
 
-A Tape is an `OP_RETURN` output that references one or more Ops and passes data parameters to the function.
+A Tape is an `OP_RETURN` output that references one or more Ops and passes data parameters to each function.
 
 For example, a simple Tape that just calls our Hello World Op might look like this:
 
@@ -109,7 +109,7 @@ end
 
 This one's a little more complex than the Hello World Op, so lets go through it step-by-step to understand what's going on.
 
-The first argument in every Op is the `state`. The state is the result from the previous cell in the tape, unless the Op is being called in the first cell of the tape (in which case the state will be `nil`). This particular Op assumes the state is a string of some length.
+The first argument in every Op is the `state`. The state is the result from the previous cell in the tape, unless the Op is being called in the first cell of the tape, in which case the state will be `nil`. This particular Op assumes the state is a string of some length.
 
 The Op also expects a `size` parameter. This value is used to iterate over the state and split the string into a table of chunks of the given size. The table of chunks is returned as the new state.
 
@@ -142,6 +142,6 @@ Of course, none of us are here to build "Hello World" apps - we're here to build
 
 With a bit of imagination, Operate can be used to much more powerful effect. Ops can be designed to process data, perform calculations and operations, and return structured interactive objects with functions and callbacks that we can utilise in our host applications.
 
-We can extend the Lua environment our Ops are executed in with our own modules and functions, so our Bitcoin transactions can interface directly with code in our own applications.
+You can extend the Lua environment that Ops are executed in with your own modules and functions, so your Bitcoin transactions can interface directly with code in your own applications.
 
 This kind of flexibility is very powerful and opens up use cases limited only by your imagination.

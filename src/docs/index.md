@@ -11,7 +11,7 @@ Operate is a set of tools to help developers build applications, games and servi
 
 Operate allows you to create functions, called "Ops", and deploy them on-chain. Transactions can then be created that call and pass data attributes to functions - effectively turning your transactions into small but powerful programs (called "Tapes").
 
-Ops are written using Lua, a high-level and simple to learn scripting language. Ops can be designed to do just about anything imaginable. If you can code it, Operate can do it.
+Ops are written using Lua, an easy to learn high-level scripting language. Ops can be designed to do just about anything imaginable. If you can code it, Operate can do it.
 
 Whilst Ops and Tapes are all stored on-chain, the Operate Agent software is needed to load and run the programs. There are agent implementations written for:
 
@@ -24,7 +24,7 @@ Operate can be useful to different people for a variety of reasons. Here's a few
 
 ### Bitcoin App developers
 
-Any individual or team building on Bitcoin can benefit from using Operate in their apps and services. Developers using Bitcom style data protocols can work more productively and efficiently by adopting Operate. Developers no longer need to spend time implementing protocol specifications. With Operate, protocols are functions and anyone can contribute to and benefit from the decentralised repository of pre-built, ready to roll, immutable functions.
+Any individual or team building on Bitcoin can benefit from using Operate in their apps and services. Developers using Bitcom style data protocols can work more productively and efficiently by adopting Operate. With Operate, protocols are functions and anyone can contribute to and benefit from the decentralised repository of pre-built, ready to roll, immutable functions.
 
 Operate brings a number of developer tools to Bitcoin developer ecosystem:
 
@@ -44,13 +44,11 @@ Operate is for people who want to build on Bitcoin. Whether by using Operate as 
 
 ## Key concepts
 
-Operate offers a unique approach to building on Bitcoin. Whilst some similarities can be drawn with systems like [Run](https://runonbitcoin.com), Operate introduces some unique concepts and conventions not found in other systems.
+Operate brings a unique approach to building on Bitcoin. Whilst some similarities can be drawn with systems like [Run](https://runonbitcoin.com), Operate introduces some unique concepts and conventions not found in other systems.
 
 ### Ops
 
 Ops are functions - small pieces of arbitrary code written in Lua. Anyone can write an Op and publish it to the blockchain. Ops are incredibly powerful and can be used to process data, perform calculations and operations, and return any computable value.
-
-Operate is a decentralised repository of pre-built, ready to roll, immutable functions.
 
 ### Tape
 

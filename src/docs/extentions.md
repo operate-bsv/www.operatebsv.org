@@ -171,6 +171,79 @@ Decodes the given JSON string and returns a data table.
 
 ## Creating an extension
 
+Operate makes it simple to expose your own modules and functions to the Lua VM. These can be written in the language of your own application (Elixir or JavaScript) but exposed as native Lua functions.
+
 ### Elixir
 
+To create an Operate extension in Elixir, create your own module and `use` the `Operate.VM.Extension` module. You must define an `extend/1` function which recieves a VM state which you can modify using the `Operate.VM` module.
+
+It is possible to add native Lua functions or Elixir code that will be exposed to the Lua VM as a native function.
+
+```elixir
+defmodule ExampleExtension do
+  use Operate.VM.Extension
+  alias Operate.VM
+
+  def extend(vm) do
+    vm
+    |> VM.set!("msg", "Hello World!")
+    |> VM.exec!("function hello() return msg end")
+    |> VM.set_function!("sum", fn _vm, args -> apply(__MODULE__, :sum, args))
+  end
+
+  def sum(a, b) do
+    a + b
+  end
+end
+```
+
+The extension can be added to the agent configuration either at startup or at run time.
+
+```elixir
+# Either define the extension globally when starting the Operate agent process
+children = [
+  {Operate, [
+    extensions: [ExampleExtension]
+  ]}
+]
+Supervisor.start_link(children, strategy: :one_for_one)
+
+# Or pass the extension when running each tape
+{:ok, tape} = Operate.run_tape(tape, extensions: [ExampleExtension])
+```
+
 ### JavaScript
+
+To create an Operate extension in JavaScript, define a class that extends from the `Operate.VM.Extension` class. You must define a static `extend()` method which recieves a `vm` instance with which you can modify the VM state.
+
+It is possible to add native Lua functions or JavaScript code that will be exposed to the Lua VM as a native function.
+
+```javascript
+const Extension = require('operate/vm/extension')
+
+class ExampleExtension extends Extension {
+  static extend(vm) {
+    vm.set('msg', 'Hello World!')
+      .exec('function hello() return msg end')
+      .setFunction('sum', this.sum)
+  }
+
+  static sum(a, b) {
+    return a + b
+  }
+}
+```
+
+The extension can be added to the agent configuration either at startup or at run time.
+
+```javascript
+// Either add the extension to the  global configuration
+Operate.config.update({
+  extensions: [ExampleExtension]
+})
+
+// Or pass the extension when running each tape
+result = Operate.runTape(tape, {
+  extensions: [ExampleExtension]
+})
+````
