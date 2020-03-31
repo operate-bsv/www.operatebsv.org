@@ -71,17 +71,17 @@ module.exports = {
     domain: 'https://www.operatebsv.org',
     author: 'Libs',
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/docs', items: [
-        { text: 'Introduction', link: '/docs' },
-        { text: 'Getting started', link: '/docs/getting-started' },
-        { text: 'Using the Agent', link: '/docs/using-the-agent' },
-        { text: 'Publishing Ops', link: '/docs/publishing-ops' },
-        { text: 'Extending Operate', link: '/docs/extensions' }
+      { title: 'Home', path: '/' },
+      { title: 'Docs', path: '/docs', children: [
+        { title: 'Introduction', path: '/docs' },
+        { title: 'Getting started', path: '/docs/getting-started' },
+        { title: 'Using the Agent', path: '/docs/using-the-agent' },
+        { title: 'Publishing Ops', path: '/docs/publishing-ops' },
+        { title: 'Extensions', path: '/docs/extensions' }
       ]},
-      { text: 'Library', link: '/library' },
-      { text: 'Playground', link: '/playground' },
-      { text: 'Articles', link: '/blog' }
+      { title: 'Library', path: '/library' },
+      { title: 'Playground', path: '/playground' },
+      { title: 'Articles', path: '/blog' }
     ]
   },
 

@@ -5,22 +5,22 @@
       v-for="item in $site.themeConfig.nav">
 
       <NavDropdown
-        :items="item.items"
-        v-if="dropDown && item.items">
+        :items="item.children"
+        v-if="dropDown && item.children">
         <router-link class="pv2 link mid-gray hover-hot-pink bb bw1 b--transparent outline-0"
           :class="navItemAClasses(item)"
-          :to="item.link"
-          v-if="item.link">
-          {{ item.text }}
+          :to="item.path"
+          v-if="item.path">
+          {{ item.title }}
           <MenuIcon class="v-mid" />
         </router-link>
       </NavDropdown>
 
       <router-link class="pv2 link mid-gray hover-hot-pink bb bw1 b--transparent outline-0"
         :class="navItemAClasses(item)"
-        :to="item.link"
+        :to="item.path"
         v-else>
-        {{ item.text }}
+        {{ item.title }}
       </router-link>
 
     </li>
@@ -40,9 +40,9 @@ export default {
 
   methods: {
     navItemLiClasses(item) {
-      if (item.text === 'Home') {
+      if (item.title === 'Home') {
         return 'dn dib-ns mr3 mr4-l';
-      } else if (item.text === 'Docs' && this.dropDown) {
+      } else if (item.title === 'Docs' && this.dropDown) {
         return 'dib mr3';
       } else {
         return 'dib mr3 mr4-l';
@@ -50,7 +50,7 @@ export default {
     },
 
     navItemAClasses(item) {
-      return `nav-item-${ item.text.toLowerCase() }`
+      return `nav-item-${ item.title.toLowerCase().replace(/\W/g, '-') }`
     }
   },
 

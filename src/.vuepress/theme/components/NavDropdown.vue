@@ -9,9 +9,8 @@
             v-for="item in items">
 
             <router-link class="db ph3 pv2 link mid-gray hover-hot-pink bl bw1 b--transparent outline-0"
-              :to="item.link">
-              <MenuIcon :size="16" class="v-mid hot-pink" />
-              {{ item.text }}
+              :to="item.path">
+              {{ item.title }}
             </router-link>
           </li>
         </ul>
@@ -49,11 +48,8 @@ export default {
   transform: translateX(-50%);
 
   ul {
+    box-shadow: 0 2px 8px 0 rgba(#000, 0.1);
     transform-origin: 50% 0;
-  }
-
-  .menu-right-icon {
-    opacity: 0;
   }
 }
 
@@ -62,7 +58,7 @@ export default {
 }
 
 .drop-enter, .drop-leave-to {
-  transform: translateY(-0.5rem) scale(0.8);
+  transform: translateY(-0.5rem) scale(0.9);
   opacity: 0;
 }
 

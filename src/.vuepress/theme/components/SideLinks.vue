@@ -1,44 +1,48 @@
 <template>
-  <ul class="list ma0 pa0 f5 lh-copy" :class="level === 1 ? 'fw5' : 'fw4'">
-    <li v-for="item in items">
-      <router-link class="relative db pv1 ph3 pl4-l link mid-gray hover-hot-pink outline-0 side-link"
-        :to="item.path">
-        <span class="db" :class="level === 1 ? 'pl0' : 'pl2'">
-          {{ item.title }}
-        </span>
-        
-      </router-link>
-      <SideLinks :items="item.children" :level="level + 1"
-        v-if="item.children && item.children.length" />
-    </li>
-  </ul>
+  <div>
+    <h4 class="ma0 ph3 pl4-l pv1 link dark-gray">
+      Documentation
+    </h4>
+
+    <ul class="list ma0 pa0 f5 lh-copy fw5">
+      <li v-for="item in $site.themeConfig.nav[1].children">
+        <router-link class="relative db pv1 ph3 pl4-l link mid-gray hover-hot-pink outline-0 side-link"
+          :to="item.path">
+          <span class="db pl0">{{ item.title }}</span>
+        </router-link>
+
+        <ul class="list ma0 pa0 f5 lh-copy fw4"
+          v-if="showSubNav(item.path)">
+          <li v-for="item in items">
+            <router-link class="relative db pv1 ph3 pl4-l link mid-gray hover-hot-pink outline-0 side-link"
+              :to="item.path">
+              <span class="db pl2">{{ item.title }}</span>
+            </router-link>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'SideLinks',
-
-  props: {
-    items: {
-      type: Array,
-      required: true
-    },
-    level: {
-      type: Number,
-      default: 1
+  computed: {
+    items() {
+      return this.$page.headers.reduce((headers, h, i, source) => {
+        if (h.level === 2) {
+          headers.push({ ...h, path: '#' + h.slug })
+        }
+        return headers;
+      }, [])
     }
   },
 
-  computed: {
-    levelClasses() {
-      switch(this.level) {
-        case 1:
-          return 'fw5';
-        case 2:
-          return 'fw4';
-      }
+  methods: {
+    showSubNav(path) {
+      return path.replace(/\W+$/, '') === this.$route.path.replace(/\W+$/, '')
     }
-  }
+  },
 }
 </script>
 

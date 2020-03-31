@@ -7,24 +7,12 @@
       class="sidebar-affix"
       :offset="{ top: -40, bottom: 60 }">
       
-      <h4 class="ma0 f5">
-        <router-link class="relative db ph3 pl4-l pv1 link dark-gray hover-hot-pink side-link"
-          :to="$page.path">
-          {{ $page.title }}
-        </router-link>
-      </h4>
-      <SideLinks :items="items" />
+      <SideLinks />
 
     </component>
     <div v-else>
 
-      <h4 class="ma0 f5">
-        <router-link class="relative db ph3 pl4-l pv1 link dark-gray hover-hot-pink side-link"
-          :to="$page.path">
-          {{ $page.title }}
-        </router-link>
-      </h4>
-      <SideLinks :items="items" />
+      <SideLinks />
       
     </div>
   </aside>
@@ -37,19 +25,6 @@ export default {
   data() {
     return {
       affixComponent: null
-    }
-  },
-
-  computed: {
-    items() {
-      return this.$page.headers.reduce((headers, h, i, source) => {
-        if (h.level === 2) {
-          headers.push({ ...h, path: '#' + h.slug, children: [] })
-        } else if (headers[headers.length-1]) {
-          headers[headers.length-1].children.push({ ...h, path: '#' + h.slug })
-        }
-        return headers;
-      }, [])
     }
   },
 
