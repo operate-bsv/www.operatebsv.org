@@ -12,7 +12,7 @@ In February I had the opportunity to get up on stage at CoinGeek London to prese
 If you missed it, then watch below:
 
 <figure class="mv4 mh0 pa0 flex-wrap">
-  <iframe width="1104" height="621" src="https://www.youtube.com/embed/mm7WR_Qi9VE?start=19745&end=20470" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="1104" height="621" src="https://www.youtube.com/embed/vmLjQMTiSdY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
 
 At the end of the presentation I revealed that a JavaScript agent for Operate is in the works and landing soon! I can confirm that soon means soon (not 18 months).
