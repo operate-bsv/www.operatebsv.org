@@ -32,8 +32,16 @@ Now Operate offers two alternative agent implementations, and we're committed to
 The great thing about JavaScript is that you can play with it in a browser. So before you start downloading npm packages, why not just try it right here, right now, on this page? Below is a fully functional embedded JavaScript console with the Operate Agent already loaded. Read on below for help getting started...
 
 <iframe
-  src="https://jsconsole.com/?%3Aload%20https%3A//cdn.jsdelivr.net/npm/@operate/agent@latest"
+  src="https://jsconsole.com/?%3Aload%20//cdn.jsdelivr.net/npm/@operate/agent@latest"
   style="width: 100%; height: 540px; margin: 1rem 0; border: 0;" />
+
+::: warning Using Firefox?
+You may need to manually load the Operate library. Paste the following in to the console above.
+
+```
+:load //cdn.jsdelivr.net/npm/@operate/agent@latest
+```
+:::
 
 ### Aliases
 
@@ -72,7 +80,7 @@ tape = await Operate
 result = await Operate.runTape(tape)
 data = Operate.util.mapToObject(result)
 
-// Traverse the metanat node
+// Traverse the metanet node
 parent = await data._META.parent()
 ```
 
@@ -94,4 +102,4 @@ All Operate software is beta software. The JavaScript agent particularly has a f
 
 ## Finally
 
-In February, when I stood up in front of [\~900 people at CoinGeek London](/blog/cambrian-and-coingeek) and revealed that a JavaScript agent was *coming soon™*, I wasn't even sure if was being honest. For a few reasons this has been a *really* challenging, and at times frustrating project to work on. To that point I must thank [@unanon_](https://twitter.com/unanon_) who joined me at CambrianSV in Lisbon, helped out with some of the dev work, and got to enjoy some of those laptop-smashingly frustrating moments with me.
+In February, when I stood up in front of [\~900 people at CoinGeek London](/blog/cambrian-and-coingeek) and revealed that a JavaScript agent was *coming soon™*, I wasn't even sure if I was being honest. For a few reasons this has been a *really* challenging, and at times frustrating project to work on. To that point I must thank [@unanon_](https://twitter.com/unanon_) who joined me at CambrianSV in Lisbon, helped out with some of the dev work, and got to enjoy some of those laptop-smashingly frustrating moments with me.
