@@ -214,7 +214,7 @@ Supervisor.start_link(children, strategy: :one_for_one)
 
 ### JavaScript
 
-To create an Operate extension in JavaScript, define a class that extends from the `Operate.VM.Extension` class. You must define a static `extend()` method which recieves a `vm` instance with which you can modify the VM state.
+To create an Operate extension in JavaScript, define a class that extends from the `Operate.VM.Extension` class. You must define a static `extend()` method which receives a `vm` instance with which you can modify the VM state.
 
 It is possible to add native Lua functions or JavaScript code that will be exposed to the Lua VM as a native function.
 

@@ -96,7 +96,7 @@ return function(state, size)
   size = tonumber(size)
   
   if size then
-    -- Iterrate over the state string, and split into a table of chunks
+    -- Iterate over the state string, and split into a table of chunks
     for i=1, string.len(state), size do
       local chunk = string.sub(state, i, i+size-1)
       table.insert(chunks, chunk)

@@ -60,7 +60,7 @@ You can list all available commands and/or get usage help for a specific command
 > operate [command] --help
 ```
 
-### Initiate a new Op library
+### Initialise a new Op library
 
 Use the `init` command to initialise a working directory for your Op(s). This will generate a `.bit` environment file in your working directory containing your publishing address and private key.
 

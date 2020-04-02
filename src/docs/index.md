@@ -22,19 +22,19 @@ Whilst Ops and Tapes are all stored on-chain, the Operate Agent software is need
 
 Operate can be useful to different people for a variety of reasons. Here's a few key groups that may be able to use Operate in their work:
 
-### Bitcoin App developers
+### Bitcoin app developers
 
-Any individual or team building on Bitcoin can benefit from using Operate in their apps and services. Developers using Bitcom style data protocols can work more productively and efficiently by adopting Operate. With Operate, protocols are functions and anyone can contribute to and benefit from the decentralised repository of pre-built, ready to roll, immutable functions.
+Any individual or team building on Bitcoin can benefit from using Operate in their apps and services. Developers using Bitcom style data protocols can work more productively and efficiently by adopting Operate. With Operate, protocols become functions and anyone can contribute to and benefit from the decentralised repository of pre-built, ready to roll, immutable functions.
 
-Operate brings a number of developer tools to Bitcoin developer ecosystem:
+Operate brings a number of developer tools to the Bitcoin developer ecosystem:
 
 * [Operate CLI](https://github.com/operate-bsv/op_cli) - a command line utility to help create, manage and publish your own library of Ops.
-* [Elixir agent](https://github.com/operate-bsv/op_agent) - the original agent software, designed for use in performant and scallable application back-ends.
+* [Elixir agent](https://github.com/operate-bsv/op_agent) - the original agent software, designed for use in performant and scalable application back-ends.
 * [JavaScript agent](https://github.com/operate-bsv/op_agent-ls) - a cross-platform agent, easy to learn and usable in both Node.js and browser environments.
 
 ### Students and beginners
 
-Leaning to build on Bitcoin is an increasingly popular topic of study for students and new developers, but it remains a challenging area to get started in. Bitcoin (SV) is uniquely blessed with a fantasic ecosystem of beginner-friendly developer tools, such as [Money Button](https://www.moneybutton.com), [Bitbus](https://bitbus.network) and [Handcash Connect](https://connect.handcash.io).
+Leaning to build on Bitcoin is an increasingly popular topic of study for students and new developers, but it remains a challenging area to get started in. Bitcoin (SV) is uniquely blessed with a fantastic ecosystem of beginner-friendly developer tools, such as [Money Button](https://www.moneybutton.com), [Bitbus](https://bitbus.network) and [Handcash Connect](https://connect.handcash.io).
 
 Operate plays nicely with these other ecosystem participants, and the JavaScript agent makes Operate more accessible to new developers than ever before.
 
@@ -44,7 +44,7 @@ Operate is for people who want to build on Bitcoin. Whether by using Operate as 
 
 ## Key concepts
 
-Operate brings a unique approach to building on Bitcoin. Whilst some similarities can be drawn with systems like [Run](https://runonbitcoin.com), Operate introduces some unique concepts and conventions not found in other systems.
+Operate has a unique approach to building on Bitcoin. Whilst some similarities can be drawn with systems like [Run](https://runonbitcoin.com), Operate introduces some unique concepts and conventions not found in other systems.
 
 ### Ops
 

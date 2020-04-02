@@ -7,12 +7,12 @@ layout: Docs
 
 ## What is the Agent
 
-The agent software is used to load and run Operate programs (tapes). The agent is responsible for loading a transaction and converting a transaction output to a valid Tape, it loads all of the necessary Ops, runs the tape and returns a result. There are agent implementations written for the following langauges:
+The agent software is used to load and run Operate programs (tapes). The agent is responsible for loading a transaction and converting a transaction output to a valid Tape, it loads all of the necessary Ops, runs the tape and returns a result. There are agent implementations written for the following languages:
 
 * [Elixir](#elixir)
 * [JavaScript](#javascript)
 
-Both agents have been buit to a similar design, they are broadly feature comparable and aim for cross compatibility so that a tape that runs on one platform should run and return the same result on any other platform.
+Both agents have been built to a similar design, they are broadly feature comparable and aim for cross compatibility so that a tape that runs on one platform should run and return the same result on any other platform.
 
 ## Elixir
 
@@ -63,7 +63,7 @@ tape.result
 
 To find out more about the Operate Agent for Elixir:
 
-* [Full API documetation](https://hexdocs.pm/operate)
+* [Full API documentation](https://hexdocs.pm/operate)
 * [View source code](https://github.com/operate-bsv/op_agent)
 
 ## JavaScript
@@ -96,6 +96,7 @@ Operate can be used straight away to load and run tapes from transactions.
 const txid = '0442b8de08b338c2fd262b2639372eaaf6d16dbf1f8e8eeb821a83ed639e75df'
 const tape = await Operate.loadTape(txid)
 const result = await Operate.runTape(tape)
+const data = Operate.util.mapToObject(result)
 
 // returns
 {
@@ -114,7 +115,7 @@ const result = await Operate.runTape(tape)
 
 To find out more about the Operate Agent for JavaScript:
 
-* [Full API documetation](https://operate-bsv.github.io/op_agent-js)
+* [Full API documentation](https://operate-bsv.github.io/op_agent-js)
 * [View source code](https://github.com/operate-bsv/op_agent-js)
 
 ## Configuration
