@@ -23,7 +23,7 @@
             </a>
           </li>
         </ul>
-        <p class="mt4 mb3 f7 lh-copy">&copy; Copyright 2019 Chronos Labs Ltd.</p>
+        <p class="mt4 mb3 f7 lh-copy">&copy; Copyright 2019-2020 Chronos Labs Ltd.</p>
       </div>
     </div>
   </footer>
