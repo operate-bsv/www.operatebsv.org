@@ -32,7 +32,7 @@
 <script>
 import NavLinks from '@theme/components/NavLinks.vue'
 import TwitterIcon from 'vue-material-design-icons/Twitter'
-import GithubIcon from 'vue-material-design-icons/GithubCircle'
+import GithubIcon from 'vue-material-design-icons/Github'
 
 export default {
   props: {
