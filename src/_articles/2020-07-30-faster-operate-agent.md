@@ -14,9 +14,9 @@ Operate news has been a little thin recently, whilst my attention has been on so
 
 ## Introducing the Terminus adapter
 
-Since launch, the Operate agent's default tape adapter has used the [BOB](https://bob.planaria.network/) public Planaria to load Operate tapes from Bitcoin transactions.
+Since launch, the Operate agent's default tape adapter has used the [BOB](https://bob.planaria.network) public Planaria to load Operate tapes from Bitcoin transactions.
 
-The latest version of the Elixir agent now comes with a new adapter, powered by Terminus, which takes advantage of Planaria Corp's most up to date infrastructure: [Bitbus](https://bitbus.network/), [Bitsocket](http://bitsocket.network/) and [BitFS](https://bitfs.network/).
+The latest version of the Elixir agent now comes with a new adapter, powered by Terminus, which takes advantage of Planaria Corp's most up to date infrastructure: [Bitbus](https://bitbus.network), [Bitsocket](https://bitsocket.network) and [BitFS](https://bitfs.network).
 
 You can switch over to the new adapter by updating to the latest agent and adjusting the agent's configuration:
 
@@ -32,7 +32,7 @@ children = [
 Supervisor.start_link(children, strategy: :one_for_one)
 ```
 
-You'll need a [Planaria token](https://token.planaria.network/) to use the Terminus adapter, but it should be 100% cross compatible with the legacy BOB adapter, plus it is **much faster**, more responsive, and **more reliable**.
+You'll need a [Planaria token](https://token.planaria.network) to use the Terminus adapter, but it should be 100% cross compatible with the legacy BOB adapter, plus it is **much faster**, more responsive, and **more reliable**.
 
 In a future release, Terminus will become the default adapter and eventually the legacy BOB adapter will be deprecated.
 
